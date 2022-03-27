@@ -1,3 +1,10 @@
+// OperacioFraccion.java
+// Equipo K
+// Integrantes:
+// Nombre			|	Participacion
+// Botello Contreras Jair	|		1
+// Garcia Reyes Irving		|		1
+
 public class OperacionFraccion
 {
 	public static Fraccion multiplica (Fraccion frac1, Fraccion frac2)
@@ -6,9 +13,9 @@ public class OperacionFraccion
 		int numerador = frac1.getNumerador() * frac2.getNumerador();
 		int denominador = frac1.getDenominador() * frac2.getDenominador();
 		resultado = new Fraccion(numerador,denominador);
-		Fraccion resultadoSimp;
-		resultadoSimp = simplificar(resultado);
-		return resultadoSimp;
+		Fraccion resultadoSimplificado;
+		resultadoSimplificado = simplificar(resultado);
+		return resultadoSimplificado;
 	}
 
 	public static int mcd(Fraccion resultado){
@@ -18,11 +25,11 @@ public class OperacionFraccion
 			return u;
 		}
 
-		int r;
+		int resto;
 		while (v!=0){
-			r = u %v;
-			u=v;
-			v = r;
+			resto = u % v;
+			u = v;
+			v = resto;
 		}
 		return u;
 	}
@@ -31,9 +38,9 @@ public class OperacionFraccion
 		int n = mcd(resultado);
 		int num = resultado.getNumerador() / n;
 		int dem = resultado.getDenominador() / n;
-		Fraccion res;
-		res = new Fraccion(num,dem);
-		return res;
+		Fraccion resultadoSimplificado;
+		resultadoSimplificado = new Fraccion(num,dem);
+		return resultadoSimplificado;
 	}
 
 }
