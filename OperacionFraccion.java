@@ -18,7 +18,7 @@ public class OperacionFraccion
 		return resultadoSimplificado;
 	}
 
-	public static int mcd(Fraccion resultado){
+	public static int maximoComunDivisor(Fraccion resultado){
 		int u = Math.abs(resultado.getNumerador());
 		int v = Math.abs(resultado.getDenominador());
 		if (v==0){
@@ -35,11 +35,11 @@ public class OperacionFraccion
 	}
 
 	public static Fraccion simplificar(Fraccion resultado){
-		int n = mcd(resultado);
-		int num = resultado.getNumerador() / n;
-		int dem = resultado.getDenominador() / n;
+		int mcd = maximoComunDivisor(resultado);
+		int numerador = resultado.getNumerador() / mcd;
+		int denominador = resultado.getDenominador() / mcd;
 		Fraccion resultadoSimplificado;
-		resultadoSimplificado = new Fraccion(num,dem);
+		resultadoSimplificado = new Fraccion(numerador,denominador);
 		return resultadoSimplificado;
 	}
 
